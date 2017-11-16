@@ -102,12 +102,13 @@
 #define configTICK_RATE_HZ                       ((TickType_t)1000)
 #define configMAX_PRIORITIES                     ( 7 )
 #define configMINIMAL_STACK_SIZE                 ((uint16_t)128)
-#define configTOTAL_HEAP_SIZE                    ((size_t)3072)
+#define configTOTAL_HEAP_SIZE                    (( size_t ) ( 17 * 1024 ))//((size_t)3072)
 #define configMAX_TASK_NAME_LEN                  ( 16 )
 #define configUSE_16_BIT_TICKS                   0
 #define configUSE_MUTEXES                        1
 #define configQUEUE_REGISTRY_SIZE                8
 #define configUSE_PORT_OPTIMISED_TASK_SELECTION  1
+#define configUSE_TRACE_FACILITY    1               // 开启追踪调试
 
 /* Co-routine definitions. */
 #define configUSE_CO_ROUTINES                    0
@@ -123,6 +124,7 @@ to exclude the API function. */
 #define INCLUDE_vTaskDelayUntil             0
 #define INCLUDE_vTaskDelay                  1
 #define INCLUDE_xTaskGetSchedulerState      1
+#define INCLUDE_xTaskGetCurrentTaskHandle   1   // 启用一个可选函数（该函数被 Trace源码使用，默认该值为0 表示不用）
 
 /* Cortex-M specific definitions. */
 #ifdef __NVIC_PRIO_BITS
@@ -167,5 +169,11 @@ standard names. */
 /* USER CODE BEGIN Defines */   	      
 /* Section where parameter definitions can be added (for instance, to override default ones in FreeRTOS.h) */
 /* USER CODE END Defines */ 
+
+/* Trace源码头文件，前面说过，最新的3.1.0版本，Trace源码被统一，简化，使用者只需要包含这一个文件即可！*/
+/* Integrates the Tracealyzer recorder with FreeRTOS */ 
+#if ( configUSE_TRACE_FACILITY == 1 )
+#include "trcRecorder.h"
+#endif
 
 #endif /* FREERTOS_CONFIG_H */

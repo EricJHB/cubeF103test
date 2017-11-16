@@ -111,7 +111,8 @@ int main(void)
   MX_USART1_UART_Init();
 
   /* USER CODE BEGIN 2 */
-
+  /* ¿ªÆôTraceµ÷ÊÔ */
+	vTraceEnable(TRC_START_AWAIT_HOST);
   /* USER CODE END 2 */
 
   /* USER CODE BEGIN RTOS_MUTEX */
@@ -153,6 +154,7 @@ int main(void)
   osKernelStart();
   
   /* We should never get here as control is now taken by the scheduler */
+
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
@@ -299,7 +301,7 @@ void StartLedTask(void const * argument)
   /* Infinite loop */
   for(;;)
   {
-   osSemaphoreWait(LedDelayBinarySemHandle , osWaitForever);
+    osSemaphoreWait(LedDelayBinarySemHandle , osWaitForever);
 		HAL_GPIO_TogglePin(LED1_GPIO_Port,LED1_Pin);
 		HAL_GPIO_TogglePin(LED2_GPIO_Port,LED2_Pin);
 		HAL_GPIO_TogglePin(LED3_GPIO_Port,LED3_Pin);

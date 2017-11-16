@@ -322,7 +322,7 @@
             <wLevel>2</wLevel>
             <uThumb>0</uThumb>
             <uSurpInc>0</uSurpInc>
-            <uC99>0</uC99>
+            <uC99>1</uC99>
             <useXO>0</useXO>
             <v6Lang>1</v6Lang>
             <v6LangP>1</v6LangP>
@@ -335,7 +335,7 @@
               <MiscControls>--C99</MiscControls>
               <Define>USE_HAL_DRIVER,STM32F103xE</Define>
               <Undefine></Undefine>
-              <IncludePath>../Inc;      ../Drivers/STM32F1xx_HAL_Driver/Inc;      ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy;      ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3;      ../Drivers/CMSIS/Device/ST/STM32F1xx/Include;      ../Middlewares/Third_Party/FreeRTOS/Source/include;      ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS;      ../Drivers/CMSIS/Include</IncludePath>
+              <IncludePath>../Inc;../Drivers/STM32F1xx_HAL_Driver/Inc;../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy;../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3;../Drivers/CMSIS/Device/ST/STM32F1xx/Include;../Middlewares/Third_Party/FreeRTOS/Source/include;../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS;../Drivers/CMSIS/Include;..\TraceRecorder\inc</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -543,6 +543,31 @@
               <FileName>startup_stm32f103xe.s</FileName>
               <FileType>2</FileType>
               <FilePath>startup_stm32f103xe.s</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>FreeRTOSTrace</GroupName>
+          <Files>
+            <File>
+              <FileName>SEGGER_RTT.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\TraceRecorder\src\SEGGER_RTT.c</FilePath>
+            </File>
+            <File>
+              <FileName>SEGGER_RTT_Printf.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\TraceRecorder\src\SEGGER_RTT_Printf.c</FilePath>
+            </File>
+            <File>
+              <FileName>trcKernelPort.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\TraceRecorder\src\trcKernelPort.c</FilePath>
+            </File>
+            <File>
+              <FileName>trcStreamingRecorder.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\TraceRecorder\src\trcStreamingRecorder.c</FilePath>
             </File>
           </Files>
         </Group>
